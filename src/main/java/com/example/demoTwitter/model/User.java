@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -24,10 +25,23 @@ public class User {
     @Column(name = "user_id")
     private Long id;
     // setting up the variables that we will need
+
+    @Email(message = "Please provide a valid email")
+    @NotEmpty(message = "Please provide an email")
     private String email;
+
+    @Length(min = 3, message = "Your username must have more than 3 letters")
+    @Length(max = 15, message = Your username cannot have more than 15 letters'')
+    @Pattern(regexp="[^\\s]+", message="Your username cannot contain spaces")
     private String username;
+
+    @Length(min = 5, message="Your password needs to be more than 5 characters")
     private String password;
+
+    @Length(message="Can't leave empty")
     private String firstName;
+
+    @Length(message="Can't leave empty")
     private String lastName;
     private int active;
 
