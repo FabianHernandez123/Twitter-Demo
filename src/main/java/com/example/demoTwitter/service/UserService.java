@@ -13,8 +13,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
-@Service
 // the service file is the middle man for the controller and the repo. the service file controls what the data base does and the actions.
+
+@Service
 public class UserService {
 
     private UserRepository userRepository;

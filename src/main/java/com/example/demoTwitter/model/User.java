@@ -5,9 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -31,7 +34,7 @@ public class User {
     private String email;
 
     @Length(min = 3, message = "Your username must have more than 3 letters")
-    @Length(max = 15, message = Your username cannot have more than 15 letters'')
+    @Length(max = 15, message = "Your username cannot have more than 15 letters")
     @Pattern(regexp="[^\\s]+", message="Your username cannot contain spaces")
     private String username;
 
@@ -47,7 +50,7 @@ public class User {
 
     @CreationTimestamp
     private Date createdAt;
-    // that start of the sql querys to line the user_id to the roles and the following.
+    // that start of the sql queries to line the user_id to the roles and the following.
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;

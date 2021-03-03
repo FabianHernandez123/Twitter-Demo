@@ -27,7 +27,7 @@ public class TweetService {
     }
 
     public List<Tweet> findAllByUsers(List<User> users) {
-        List<Tweet> tweets = tweetRepository.findAllByUserInOrderByCreatedDesc(users);
+        List<Tweet> tweets = tweetRepository.findAllByUserInOrderByCreatedAtDesc(users);
         return tweets;
     }
 
