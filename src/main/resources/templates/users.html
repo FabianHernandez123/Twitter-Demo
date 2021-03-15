@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <title id="title">Users</title>
     <link rel="stylesheet" type="text/css" href="../../custom.css">
-    <div th:replace="/fragments/headLink :: head-styles"></div>
+    <div th:replace="/fragments/headLink"></div>
 </head>
 <body>
 <div class="container-fluid">
     <div th:replace="fragments/navbar"></div>
     <ul class="nav nav-tabs">
         <li role="presentation" th:classappend="${filter == 'all' ? 'active' : '' }">
-            <a href="/users">All</a></li>
+            <a href="/users">All &nbsp&nbsp</a></li>
         <li role="presentation" th:classappend="${filter == 'followers' ? 'active' : '' }">
-            <a href="/users?filter=followers">Followers</a></li>
+            <a href="/users?filter=followers">Followers &nbsp&nbsp</a></li>
         <li role="presentation" th:classappend="${filter == 'following' ? 'active' : '' }">
             <a href="/users?filter=following">Following</a></li>
     </ul><br/>
