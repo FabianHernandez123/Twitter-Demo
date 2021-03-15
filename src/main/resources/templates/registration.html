@@ -49,12 +49,12 @@
     document.getElementById("formreg").style.visibility = "hidden";
     document.getElementById("titlehead").style.visibility = "hidden";
     </script>
-<!--    can probably try to center this with columns-->
+<!--    should figure out how to move spaces, instead of just pushing down. -->
     <div class="container-fluid">
     <h2><span style="margin-left:150px; margin-right;250px; display:inline-block;" class="text-success" th:utext="${success}">&nbsp;</span></h2>
     </div>
-    <div class="col-md-12">
-        <a class="btn btn-primary" href="/login" role="button">Go to Login Page</a>
+    <div class="container">
+        <a class="btn btn-primary btn-block btn-md" href="/login" role="button">Go to Login Page</a>
     </div>
 </div>
 <script th:replace="fragments/scripts"></script>
