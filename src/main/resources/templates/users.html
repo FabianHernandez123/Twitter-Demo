@@ -20,7 +20,7 @@
     </ul><br/>
 
     <div class="container">
-        <h2>Users</h2>
+        <h2 id="usertitle">Users</h2>
         <div class="list-group" th:each="user:${users}">
             <a th:href="@{/users/} + ${user.username}" class="list-group-item list-group-item-action">
                 <div class="row">
@@ -49,8 +49,17 @@
         </div>
     </div>
 </div>
-<div th:if="${#lists.isEmpty(users) and filter == 'followers'}"><h3>You don't have any followers</h3></div>
-<div th:if="${#lists.isEmpty(users) and filter == 'following'}"><h3>You're not following anyone</h3></div>
+<div th:if="${#lists.isEmpty(users) and filter == 'followers'}">
+    <h3>You don't have any followers</h3>
+</div>
+<div th:if="${#lists.isEmpty(users) and filter == 'following'}">
+    <h3>You're not following anyone</h3>
+</div>
+<div th:if="${#lists.isEmpty(users)}">
+    <script>
+    document.getElementById("usertitle").style.visibility = "hidden";
+    </script>
+</div>
 
 </body>
 </html>
