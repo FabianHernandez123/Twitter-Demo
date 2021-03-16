@@ -19,6 +19,8 @@
     </ul><br/>
 
     <h2>Tweets</h2>
+
+
     <div th:each="tweet:${tweetList}" class="list-group">
         <li class="list-group-item list-group-item-action">
 <!--            editing here to try to make @name a link-->
@@ -26,8 +28,10 @@
         <h5>@<span th:text="${tweet.user.username}"></span></a>
             <small><span th:text="${tweet.date}"></span></small></h5>
         <p th:utext="${tweet.message}"></p>
+
         </li>
     </div>
+
     <div th:if="${#lists.isEmpty(tweetList)}">
         <h3>No tweets available.</h3>
     </div>
