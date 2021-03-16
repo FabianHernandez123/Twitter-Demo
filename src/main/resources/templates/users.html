@@ -12,9 +12,11 @@
     <div th:replace="fragments/navbar"></div>
     <ul class="nav nav-tabs">
         <li role="presentation" th:classappend="${filter == 'all' ? 'active' : '' }">
-            <a href="/users">All &nbsp&nbsp</a></li>
+            <a href="/users">All </a></li>
+        <li>&nbsp&nbsp</li>
         <li role="presentation" th:classappend="${filter == 'followers' ? 'active' : '' }">
-            <a href="/users?filter=followers">Followers &nbsp&nbsp</a></li>
+            <a href="/users?filter=followers">Followers </a></li>
+        <li>&nbsp&nbsp</li>
         <li role="presentation" th:classappend="${filter == 'following' ? 'active' : '' }">
             <a href="/users?filter=following">Following</a></li>
     </ul><br/>
